@@ -8,9 +8,11 @@ const BankLogin = () => {
   };
   return (
     <Form method="post" onSubmit={onSubmitHandler}>
-      <input type="text" placeholder="username"></input>
-      <input type="password" placeholder="password"></input>
-      <button type="submit">Submit</button>
+      <div className="flex flex-col">
+        <input type="text" placeholder="username"></input>
+        <input type="password" placeholder="password"></input>
+        <button type="submit">Submit</button>
+      </div>
     </Form>
   );
 };

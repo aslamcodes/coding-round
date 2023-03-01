@@ -6,6 +6,8 @@ import BankLogin from "./pages/Bank/BankLogin";
 import "./index.css";
 import CustomerLogin from "./pages/Commerce/CustomerLogin";
 import ProductPage from "./pages/Commerce/ProductPage";
+import ContextProvider from "./context/index.js";
+import BankUser from "./pages/Bank/BankUser";
 
 const router = createBrowserRouter([
   {
@@ -24,10 +26,16 @@ const router = createBrowserRouter([
     path: "/product-page",
     element: <ProductPage />,
   },
+  {
+    path: "/bank-user",
+    element: <BankUser />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ContextProvider>
+      <RouterProvider router={router} />
+    </ContextProvider>
   </React.StrictMode>
 );
